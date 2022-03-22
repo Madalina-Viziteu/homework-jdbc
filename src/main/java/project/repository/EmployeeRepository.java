@@ -12,7 +12,7 @@ public class EmployeeRepository {
 
     public void findAllEmployees() {
         try {
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT employeeId, email, lastName FROM employees");
             while (rs.next()) {
@@ -29,7 +29,7 @@ public class EmployeeRepository {
 
     public void displayAllEmployeesStartingWithLetter(String letter) {
         try {
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             Statement stmt = connection.createStatement();
             String query = "SELECT employeeId, firstName, lastName FROM employees Where firstName like '" + letter + "%'";
             ResultSet rs = stmt.executeQuery(query);
@@ -46,7 +46,7 @@ public class EmployeeRepository {
 
     public void displayAllEmployeesWithoutDepartment() {
         try {
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT employeeId, firstname, lastname FROM employees WHERE departmentId is NULL");
             while (rs.next()) {
@@ -62,7 +62,7 @@ public class EmployeeRepository {
 
     public void displayAllEmployeesWithDepartment() {
         try {
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("select employeeId, firstName, lastName, employees.departmentId, name from departments, employees where employees.departmentId = departments.departmentId;");
             while (rs.next()) {

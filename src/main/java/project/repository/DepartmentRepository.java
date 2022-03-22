@@ -16,7 +16,7 @@ public class DepartmentRepository {
         ArrayList<Department> departments = null;
         try {
             departments = new ArrayList<>();
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from departments");
             while (rs.next()) {
@@ -36,7 +36,7 @@ public class DepartmentRepository {
     public Department findById(Integer departmentId) {
         try {
             String select = "select * from departments where departmentId = ?";
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             PreparedStatement stmt = connection.prepareStatement(select);
             stmt.setInt(1, departmentId);
             ResultSet rs = stmt.executeQuery();
@@ -58,7 +58,7 @@ public class DepartmentRepository {
         try {
             String select = "delete from departments where departmentId = ?";
             String updateEmployees = "update employees set departmentId = null where departmentId = ?";
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             preparedstatement = connection.prepareStatement(updateEmployees);
             preparedstatement.setInt(1, departmentId);
             preparedstatement.executeUpdate();
@@ -75,7 +75,7 @@ public class DepartmentRepository {
     public void insertDepartment(Department department) {
         String insert = "INSERT INTO departments  VALUES(?,?)";
         try {
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             preparedstatement = connection.prepareStatement(insert);
             preparedstatement.setInt(1, department.getDepartmentId());
             preparedstatement.setString(2, department.getName());
@@ -90,7 +90,7 @@ public class DepartmentRepository {
     public void updateDepartment(Department department) {
         String update = "UPDATE departments SET name  = ? WHERE departmentId = 3";
         try {
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             preparedstatement = connection.prepareStatement(update);
             preparedstatement.setString(1, department.getName());
             int ret = preparedstatement.executeUpdate();

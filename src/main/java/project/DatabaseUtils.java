@@ -7,7 +7,7 @@ public class DatabaseUtils {
 
     static Connection connection;
 
-    public static Connection getDatabaseConnection() {
+    public static Connection getConnection() {
         try {
 
             if (connection == null) {

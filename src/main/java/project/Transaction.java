@@ -13,7 +13,7 @@ public class Transaction {
     private static final String UPDATE = "UPDATE employees SET email = ?, firstName = ? WHERE employeeId = ?";
 
     public Transaction() {
-        conn = DatabaseUtils.getDatabaseConnection();
+        conn = DatabaseUtils.getConnection();
     }
 
     private void setAutoCommit(boolean isAutoCommit) {

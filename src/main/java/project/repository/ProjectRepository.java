@@ -13,7 +13,7 @@ public class ProjectRepository {
     public void displayAllProjects() {
         try {
             String display = "SELECT * FROM projects";
-            connection = DatabaseUtils.getDatabaseConnection();
+            connection = DatabaseUtils.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(display);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
