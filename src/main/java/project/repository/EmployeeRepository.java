@@ -22,16 +22,11 @@ public class EmployeeRepository {
                 System.out.println(id + ", " + email + ", " + lastName);
             }
 
-//            rs.close();
-//            stmt.close();
-//            connection.close();
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
 
-    // Display all employees with names starting with the letter J (employeeId, firstName, lastName)
     public void displayAllEmployeesStartingWithLetter(String letter) {
         try {
             connection = DatabaseUtils.getDatabaseConnection();
@@ -49,7 +44,6 @@ public class EmployeeRepository {
         }
     }
 
-    //  Display all employees that haven’t been assigned to a department
     public void displayAllEmployeesWithoutDepartment() {
         try {
             connection = DatabaseUtils.getDatabaseConnection();
@@ -66,7 +60,6 @@ public class EmployeeRepository {
         }
     }
 
-    //  Display all employees along with the department they’re in
     public void displayAllEmployeesWithDepartment() {
         try {
             connection = DatabaseUtils.getDatabaseConnection();
@@ -81,6 +74,9 @@ public class EmployeeRepository {
                 String name = rs.getString("name");
                 System.out.println(id + ", " + firstname + ", " + lastname + ", " + dateOfBirth + ", " + name);
             }
+            rs.close();
+            stmt.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

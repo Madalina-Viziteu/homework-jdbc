@@ -10,7 +10,6 @@ public class ProjectRepository {
     private Connection connection;
 
 
-    // Display all projects (projectId, description)
     public void displayAllProjects() {
         try {
             String display = "SELECT * FROM projects";

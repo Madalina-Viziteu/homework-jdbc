@@ -120,18 +120,13 @@ public class Transaction {
         transaction.setAutoCommit(false);
         boolean status = transaction.insert(5, "Bill", "bill@gmail.com");
         if (status) {
-            int id = transaction.select("john@johnson.com");
-            status = transaction.update(id, "john@gmail.com", "Jonny");
+            int id = transaction.select("john@gmail.com");
+            status = transaction.update(id, "john@yahoo.com", "Jonn");
         }
         if (status) {
             transaction.commit();
         } else {
             transaction.rollback();
-        }
-        int id = transaction.select("john@gmail.com");
-
-        if (id == -1) {
-            System.out.println("Element does not exist anymore");
         }
         transaction.setAutoCommit(true);
     }

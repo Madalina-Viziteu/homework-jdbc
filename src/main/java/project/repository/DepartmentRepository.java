@@ -1,9 +1,7 @@
 package project.repository;
 
-
 import project.DatabaseUtils;
 import project.entity.Department;
-
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -33,7 +31,6 @@ public class DepartmentRepository {
         }
         return departments;
     }
-
 
 
     public Department findById(Integer departmentId) {
