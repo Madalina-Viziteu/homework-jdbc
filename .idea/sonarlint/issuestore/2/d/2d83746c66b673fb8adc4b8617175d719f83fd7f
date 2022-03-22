@@ -1,0 +1,21 @@
+
+m
+java:S3008"WRename this field "DATABASE_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó­êÑ
+m
+java:S3008"XRename this field "DATABASE_USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´–Õ
+w
+java:S3008"\Rename this field "DATABASE_PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôáÚƒÿÿÿÿÿ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(üŠåÜ
+n
+java:S1104"XMake DATABASE_URL a static final constant or non-public and provide accessors if needed.(Ó­êÑ
+n
+java:S1104"YMake DATABASE_USER a static final constant or non-public and provide accessors if needed.(´–Õ
+x
+java:S1104"]Make DATABASE_PASSWORD a static final constant or non-public and provide accessors if needed.(ôáÚƒÿÿÿÿÿ
+H
+java:S1444"2Make this "public static DATABASE_URL" field final(Ó­êÑ
+H
+java:S1444"3Make this "public static DATABASE_USER" field final(´–Õ
+R
+java:S1444"7Make this "public static DATABASE_PASSWORD" field final(ôáÚƒÿÿÿÿÿ
