@@ -51,7 +51,6 @@ public class Transaction {
     private int select(String email) {
         try {
             if (conn != null) {
-                // "SELECT employeeId, email, firstName FROM employees WHERE email = ?";
                 PreparedStatement pstmt = conn.prepareStatement(SELECT);
                 pstmt.setString(1, email);
                 ResultSet rs = pstmt.executeQuery();
@@ -77,7 +76,6 @@ public class Transaction {
     private boolean insert(int employeeId, String firstName, String email) {
         try {
             if (conn != null) {
-                //"INSERT employees(employeeId, firstName, email) VALUES (?, ?,?)";
                 PreparedStatement pstmt = conn.prepareStatement(INSERT);
                 pstmt.setInt(1, employeeId);
                 pstmt.setString(2, firstName);
@@ -97,7 +95,6 @@ public class Transaction {
     private boolean update(int id, String email, String firstName) {
         try {
             if (conn != null) {
-                //"UPDATE employees SET email = ?, firstName = ? WHERE id = ?";
                 PreparedStatement pstmt = conn.prepareStatement(UPDATE);
                 pstmt.setString(1, email);
                 pstmt.setString(2, firstName);
